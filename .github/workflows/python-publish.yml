@@ -29,6 +29,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install build
         pip install twine
+        pip install -U keyring keyrings.alt
     - name: Build package
       run: python -m build
     - name: Publish to Test PyPI
