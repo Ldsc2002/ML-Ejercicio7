@@ -36,4 +36,4 @@ jobs:
       env:
         user: __token__
         passwd: ${{ secrets.TEST_PYPI_PASSWORD }}  # Set your Test PyPI password in GitHub Secrets
-      run: twine upload --repository testpypi dist/*
+      run: twine upload --repository testpypi dist/* -u __token__ -p ${{ secrets.TEST_PYPI_PASSWORD }}
