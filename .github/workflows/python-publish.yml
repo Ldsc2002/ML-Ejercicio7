@@ -33,5 +33,6 @@ jobs:
       run: python -m build
     - name: Publish to Test PyPI
       env:
-        TWINE_API: ${{ secrets.TEST_PYPI_PASSWORD }}  # Set your Test PyPI password in GitHub Secrets
+        user: __token__
+        password: ${{ secrets.TEST_PYPI_PASSWORD }}  # Set your Test PyPI password in GitHub Secrets
       run: twine upload --repository testpypi dist/*
